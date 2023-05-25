@@ -2,17 +2,14 @@
 # Note: objective() is a method that verifies if visiting_node is the desired 
 # node.
 
-def breadth_first_search(node):
-  search_queue = deque()
-  search_queue += graph[node]
-  searched_nodes = []
-  while search_queue:
-    visiting_node = search_queue.popleft()
-    if not visiting_node in searched_nodes:
-      if objective(visiting_node):
-        print(visiting_node)
-        return True
-      else:
-        search_queue += graph[visiting_node]
-        searched_nodes.append(visiting_node)
-  return False
+def breadth_first_search(graph, start):
+  queue += deque([node])
+  visited = set()
+  visited.add(start)
+  while queue:
+    node = queue.popleft()
+    print(node)
+    for neighbor in graph[node]:
+      if neighbor not in visited:
+        queue.append(neighbor)
+        visited.add(neighbor)
