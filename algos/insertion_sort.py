@@ -1,4 +1,4 @@
-## Insertion Sort Algorithm
+# Insertion Sort Algorithm
 
 def insertion_sort(A, n):
   for i in range(1, n):
